@@ -1,0 +1,26 @@
+{
+	"name": "weather-cli",
+	"version": "1.0.0",
+	"description": "CLI for getting weather",
+	"main": "index.js",
+	"bin": "./index.js",
+	"scripts": {
+		"start": "node index.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"cli",
+		"weather"
+	],
+	"author": "Andrey Emelianov",
+	"license": "ISC",
+	"homepage": "https://yandex.ru",
+	"repository": {
+		"type": "git",
+		"url": "https://yandex.ru"
+	},
+	"bugs": {
+		"url": "https://yandex.ru",
+		"email": "631077@mail.ru"
+	}
+}
