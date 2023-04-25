@@ -14,7 +14,7 @@ const getCoord = async (city) => {
 		},
 	});
 
-	getWeather(data[0]['lat'], data[0]['lon']);
+	return getWeather(data[0]['lat'], data[0]['lon']);
 };
 
 const getWeather = async (lat, lon) => {
@@ -31,7 +31,7 @@ const getWeather = async (lat, lon) => {
 			lang: 'ru',
 		},
 	});
-	console.log(data);
+
 	return data;
 };
 

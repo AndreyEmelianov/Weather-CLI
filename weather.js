@@ -17,9 +17,23 @@ const saveToken = async (token) => {
 	}
 };
 
+const getForcast = async () => {
+	try {
+		const weather = await getCoord('moscow');
+		console.log(weather);
+	} catch (error) {
+		if (error?.response?.status == 404) {
+			printError('Неверно указан город');
+		} else if (error?.response?.status == 401) {
+			printError('Неверно указан токен');
+		} else {
+			printError(error.message);
+		}
+	}
+};
+
 const initCLI = () => {
 	const args = getArgs(process.argv);
-	// console.log(process.env);
 
 	if (args.h) {
 		printHelp();
@@ -31,7 +45,8 @@ const initCLI = () => {
 	if (args.t) {
 		return saveToken(args.t);
 	}
-	getCoord('London');
+
+	getForcast();
 };
 
 initCLI();
